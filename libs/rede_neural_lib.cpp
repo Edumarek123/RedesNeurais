@@ -18,7 +18,7 @@ RedeNeural::RedeNeural(int tam_Lx, int tam_Ly, vector<int> tams_hl,float alfa_le
     tam_layer_x=tam_Lx;
     tam_layer_y=tam_Ly;
     numero_layers=((int)tams_hl.size())+2;
-    LEARNIG_RATE=alfa_learn;
+    LEARNING_RATE=alfa_learn;
 
     tam_layers.insert(tam_layers.begin(), tam_layer_x);
     for(int i=1;i<numero_layers-1;i++)
@@ -177,8 +177,8 @@ void RedeNeural::BackPropagation(Matriz entradas){
     //∇Cw_l = a_(l-1) * e_l
     //∇Cb_l = e_l
     for(int i=numero_layers-2;i>=1;i--){
-        weights_layers[i]->somar(multiplicar_escalar((multiplicar(*erros[i], transposta(*saidas[i-1]))), LEARNIG_RATE));
-        bias_layers[i]->somar(multiplicar_escalar(*erros[i], LEARNIG_RATE));
+        weights_layers[i]->somar(multiplicar_escalar((multiplicar(*erros[i], transposta(*saidas[i-1]))), LEARNING_RATE));
+        bias_layers[i]->somar(multiplicar_escalar(*erros[i], LEARNING_RATE));
     }
     weights_layers[0]->somar(multiplicar_escalar((multiplicar(*erros[0], transposta(entradas))), LEARNING_RATE));
     bias_layers[0]->somar(multiplicar_escalar(*erros[0], LEARNING_RATE));

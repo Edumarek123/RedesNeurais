@@ -11,7 +11,7 @@ using namespace std;
 
 class RedeNeural{
 public:
-    float LEARNIG_RATE;
+    float LEARNING_RATE;
     int numero_layers;
     int tam_layer_x;
     int tam_layer_y;
