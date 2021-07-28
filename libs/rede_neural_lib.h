@@ -9,8 +9,7 @@
 
 using namespace std;
 
-class RedeNeural{
-public:
+struct RedeNeural{
     float LEARNING_RATE;
     int numero_layers;
     int tam_layer_x;
@@ -34,7 +33,7 @@ public:
     void Calcula_Erros(Matriz saidas_esperadas); //ok
     void BackPropagation(Matriz entradas); //ok
 
-    void TreinarRede(const std::string entradas,const std::string saidas_esperadas, int porcentagem_testes, bool logs);
+    void TreinarRede(const std::string entradas,const std::string saidas_esperadas, int porcentagem_testes, float threshold);
 };
 
 void covolucao_saidas(Matriz* m);

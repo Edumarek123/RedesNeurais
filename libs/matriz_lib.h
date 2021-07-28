@@ -6,8 +6,7 @@
 #define MATRIZ_LIB_H
 #include <iostream>
 
-class Matriz{
-public:
+struct Matriz{
     int linhas;
     int colunas;
     float **matriz;
